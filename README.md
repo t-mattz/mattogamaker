@@ -1,2 +1,2 @@
-# matsuda-togame-sim
-松田 vs 十亀シミュレーター
+# mattogamaker
+松田 vs 十亀シミュレーター メーカー
