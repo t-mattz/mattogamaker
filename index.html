@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>まつだ たい とがめ ーかー</title>
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <script src="jquery.js"></script>
+     <script src='main.js?202204250828'></script>
+     <link href='styles.css?202101201' rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+     <h1>まつだ たい とがめ ーかー</h1>
+     <section id='description'>
+          <h2>これって何??</h2>
+          <p><a href='https://mattz.xii.jp/yakiu/yakiu.html'>松田 vs 十亀シミュレーター</a>をベースに、任意の名前と任意の対戦成績で同じルールでシミュレートできるようにしたものです。</p>
+          <h2>遊び方</h2>
+          <p>各項目に任意の値を入力してから、「始める」ボタンをクリックしてください。</p>
+          <p>実際の成績をベースにする場合、通算打席数欄には打数+四死球数を入れると、オリジナルと同じロジックになります。</p>
+          <p>すべて未入力のまま始めると、2021年度までの成績を反映した松田 vs 十亀シミュレーター ver.2021として動作します。</p>
+          <p>※オリジナルは2019/5/21時点の成績をベースにしていますが、その後十亀投手の松田選手に対しての成績が良化しており（2020、2021は合わせて6打数ノーヒット）オリジナルより少し点が入りにくくなっています。</p>
+     </section>
+     <section id='input'>
+          <div>
+               <span>投手</span>
+               <span><input type='text' id='pn' /></span>
+               <span>打者</span>
+               <span><input type='text' id='hn' /></span>
+               <span>通算打席数</span>
+               <span><input type='number' id='ab' min='0' step="1" /></span>
+               <span>通算本塁打数</span>
+               <span><input type='number' id='hr' min='0' step="1" /></span>
+               <span>通算三塁打数</span>
+               <span><input type='number' id='b3' min='0' step="1" /></span>
+               <span>通算二塁打数</span>
+               <span><input type='number' id='b2' min='0' step="1" /></span>
+               <span>通算単打数</span>
+               <span><input type='number' id='b1' min='0' step="1" /></span>
+               <span>通算死球数</span>
+               <span><input type='number' id='db' min='0' step="1" /></span>
+               <span>通算四球数</span>
+               <span><input type='number' id='bb' min='0' step="1" /></span>
+               <span>通算三振数</span>
+               <span><input type='number' id='so' min='0' step="1" /></span>
+          </div>
+          <div id='warn'></div>
+     </section>
+     <div>
+          <input type='button' value='始める' id='start' />
+     </div>
+     <ol id='result'>
+          <li id='inning-1'>
+               <ol></ol>
+          </li>
+          <li id='inning-2'>
+               <ol></ol>
+          </li>
+          <li id='inning-3'>
+               <ol></ol>
+          </li>
+          <li id='inning-4'>
+               <ol></ol>
+          </li>
+          <li id='inning-5'>
+               <ol></ol>
+          </li>
+          <li id='inning-6'>
+               <ol></ol>
+          </li>
+          <li id='inning-7'>
+               <ol></ol>
+          </li>
+          <li id='inning-8'>
+               <ol></ol>
+          </li>
+          <li id='inning-9'>
+               <ol></ol>
+          </li>
+     </ol>
+     <div id='bottom'></div>
+     <div>
+          <input type='button' value='' id='next-batter' />
+          <input type='button' value='もう一回' id='restart' />
+     </div>
+     <table id='score-board'>
+          <tr>
+               <th>回</th>
+               <th>1</th>
+               <th>2</th>
+               <th>3</th>
+               <th>4</th>
+               <th>5</th>
+               <th>6</th>
+               <th>7</th>
+               <th>8</th>
+               <th>9</th>
+               <th>計</th>
+          </tr>
+          <tr>
+               <th id="score-board-hitter-name"></th>
+               <td id='score-1'></td>
+               <td id='score-2'></td>
+               <td id='score-3'></td>
+               <td id='score-4'></td>
+               <td id='score-5'></td>
+               <td id='score-6'></td>
+               <td id='score-7'></td>
+               <td id='score-8'></td>
+               <td id='score-9'></td>
+               <th id='score-total'></th>
+          </tr>
+          <tr id='summary'>
+               <td colspan='11'></td>
+          </tr>
+     </table>
+     </div>
+     <div id='target'></div>
+     <p id='pace-range'>早く <input type='range' min='1' max='1000' id='pace' value='1' /> ゆっくり</p>
+</body>
+</html>
